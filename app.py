@@ -13,6 +13,28 @@ os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 jobs = {}
 
 
+def cleanup_old_files():
+    """Delete files in the download directory older than 1 hour."""
+    import time
+    while True:
+        now = time.time()
+        for f in os.listdir(DOWNLOAD_DIR):
+            file_path = os.path.join(DOWNLOAD_DIR, f)
+            if os.path.isfile(file_path):
+                # If file is older than 1 hour
+                if os.stat(file_path).st_mtime < now - 3600:
+                    try:
+                        os.remove(file_path)
+                    except OSError:
+                        pass
+        time.sleep(600)  # Run every 10 minutes
+
+
+# Start cleanup thread
+cleanup_thread = threading.Thread(target=cleanup_old_files, daemon=True)
+cleanup_thread.start()
+
+
 def run_download(job_id, url, format_choice, format_id):
     job = jobs[job_id]
     out_template = os.path.join(DOWNLOAD_DIR, f"{job_id}.%(ext)s")

@@ -30,10 +30,21 @@ cd reclip
 
 Open **http://localhost:8899**.
 
-Or with Docker:
+## Deployment
+
+### Coolify / Docker Compose
+
+This project is optimized for [Coolify](https://coolify.io/). You can deploy it using the provided `docker-compose.yml`:
+
+1. Create a new "Docker Compose" resource in Coolify.
+2. Paste the contents of `docker-compose.yml` or point to this repository.
+3. Coolify will automatiquement handle the build, persistent volume for downloads, and health checks.
+
+Or manually with Docker:
 
 ```bash
-docker build -t reclip . && docker run -p 8899:8899 reclip
+docker build -t reclip .
+docker run -p 8899:8899 -v reclip_data:/app/downloads reclip
 ```
 
 ## Usage

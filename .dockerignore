@@ -1,0 +1,16 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.db
+.venv
+venv
+downloads/*
+!downloads/.gitkeep
+docker-compose.yml
+Dockerfile
+README.md
+LICENSE
+reclip.sh
