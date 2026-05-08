@@ -18,15 +18,15 @@ COPY . .
 RUN mkdir -p downloads && chmod 777 downloads
 
 # Environment variables
-ENV PORT=8899
+ENV PORT=3000
 ENV HOST=0.0.0.0
 ENV PYTHONUNBUFFERED=1
 
-EXPOSE 8899
+EXPOSE 3000
 
 # Healthcheck to ensure the service is running
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:$PORT/ || exit 1
+  CMD curl -f http://localhost:3000/ || exit 1
 
 # Start the application with gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8899", "--workers", "2", "--timeout", "300", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:3000", "--workers", "2", "--timeout", "300", "app:app"]
