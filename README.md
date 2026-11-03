@@ -1,9 +1,24 @@
+<div align="center">
+
 # ReClip
 
-A self-hosted, open-source video and audio downloader with a clean web UI. Paste links from YouTube, TikTok, Instagram, Twitter/X, and 1000+ other sites — download as MP4 or MP3.
+**Save video or audio from a link, on your own server.**
 
-![Python](https://img.shields.io/badge/python-3.8+-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+A lightweight, self-hosted web interface powered by `yt-dlp` and FFmpeg.
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Backend-Flask-222222?logo=flask&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)
+[![MIT](https://img.shields.io/badge/License-MIT-64748B)](LICENSE)
+
+[Features](#features) · [Quick start](#quick-start) · [Deployment](#deployment) · [Usage](#usage)
+
+</div>
+
+---
+
+Paste supported URLs, inspect the media, and choose **MP4** video or **MP3** audio. ReClip runs with a small Flask backend and a framework-free frontend.
+
 
 https://github.com/user-attachments/assets/419d3e50-c933-444b-8cab-a9724986ba05
 
@@ -23,7 +38,7 @@ https://github.com/user-attachments/assets/419d3e50-c933-444b-8cab-a9724986ba05
 
 ```bash
 brew install yt-dlp ffmpeg    # or apt install ffmpeg && pip install yt-dlp
-git clone https://github.com/averygan/reclip.git
+git clone https://github.com/neosoda/reclip.git
 cd reclip
 ./reclip.sh
 ```
@@ -38,7 +53,7 @@ This project is optimized for [Coolify](https://coolify.io/). You can deploy it 
 
 1. Create a new "Docker Compose" resource in Coolify.
 2. Paste the contents of `docker-compose.yml` or point to this repository.
-3. Coolify will automatiquement handle the build, persistent volume for downloads, and health checks.
+3. Coolify can handle the build, persistent volume for downloads, and health checks.
 
 Or manually with Docker:
 
@@ -68,7 +83,7 @@ YouTube, TikTok, Instagram, Twitter/X, Reddit, Facebook, Vimeo, Twitch, Dailymot
 - **Download engine:** [yt-dlp](https://github.com/yt-dlp/yt-dlp) + [ffmpeg](https://ffmpeg.org/)
 - **Dependencies:** 2 (Flask, yt-dlp)
 
-## Disclaimer
+## Responsible use
 
 This tool is intended for personal use only. Please respect copyright laws and the terms of service of the platforms you download from. The developers are not responsible for any misuse of this tool.
 
