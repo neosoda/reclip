@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/reclip-hero.svg" alt="ReClip — self-hosted video and audio downloader (conceptual banner)" width="100%">
+
 # ReClip
 
 **Save video or audio from a link, on your own server.**
@@ -11,18 +13,24 @@ A lightweight, self-hosted web interface powered by `yt-dlp` and FFmpeg.
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)
 [![MIT](https://img.shields.io/badge/License-MIT-64748B)](LICENSE)
 
-[Features](#features) · [Quick start](#quick-start) · [Deployment](#deployment) · [Usage](#usage)
+[**See the demo**](assets/preview.mp4) · [Features](#features) · [Quick start](#quick-start) · [Self-host](#deployment) · [Usage](#usage)
 
 </div>
 
 ---
 
-Paste supported URLs, inspect the media, and choose **MP4** video or **MP3** audio. ReClip runs with a small Flask backend and a framework-free frontend.
+Paste a supported media URL, inspect the available formats, and choose **MP4 video** or **MP3 audio**. ReClip combines a small Flask backend with a framework-free frontend; the download runs on **your server**, not in a third-party conversion website.
+
+| 🎬 Video & audio | 🖥️ Your infrastructure | ⚡ Lightweight UI |
+| :--- | :--- | :--- |
+| Choose MP4, MP3 and supported quality options. | Docker or a local Python environment, with downloaded files under your control. | No frontend framework, build step or external account required by ReClip. |
 
 
-https://github.com/user-attachments/assets/419d3e50-c933-444b-8cab-a9724986ba05
+**[▶ Watch ReClip in action](assets/preview.mp4)** — demonstration video from this repository.
 
-![ReClip MP3 Mode](assets/preview-mp3.png)
+![Actual ReClip interface showing MP3 mode and media options](assets/preview-mp3.png)
+
+*Actual project screenshot. The header banner is conceptual artwork.*
 
 ## Features
 
@@ -86,6 +94,14 @@ YouTube, TikTok, Instagram, Twitter/X, Reddit, Facebook, Vimeo, Twitch, Dailymot
 ## Responsible use
 
 This tool is intended for personal use only. Please respect copyright laws and the terms of service of the platforms you download from. The developers are not responsible for any misuse of this tool.
+
+## Frequently asked questions
+
+**Does ReClip bypass DRM or paywalls?** No. ReClip uses yt-dlp and FFmpeg for media it can legitimately access; it does not remove DRM or grant access to protected services.
+
+**Where are downloads stored?** In the app's downloads directory; the Docker command above persists that directory in the `reclip_data` volume.
+
+**Does it require an online conversion service?** No external conversion SaaS is required. The server must still be able to reach the original media source.
 
 ## License
 
